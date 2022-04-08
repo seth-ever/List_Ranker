@@ -59,7 +59,7 @@ int partition(vector<string> &items, int left, int right) {//iterates through ve
         while(compare(pivotValue, items[i] )) { // pivotValue > items[i]
             i++;
         }
-        while(compare(items[j], pivotValue)) { //items[j] < pivotValue
+        while(compare(items[j], pivotValue)) { //items[j] > pivotValue
             j--;
         }
         if(i <= j) {
@@ -90,8 +90,8 @@ vector<string> quicksort2(vector<string> items){//more spacially complex but per
     vector<string> right;
     string pivotValue = items[0];
     for (size_t i = 1;i <items.size(); i++){
-        if (compare(items[i], pivotValue)) {left.push_back(items[i]);} //items[i] < pivotValue
-        else {right.push_back(items[i]);}// items[i] > pivotValue
+        if (compare(items[i], pivotValue)) {right.push_back(items[i]);} //items[i] > pivotValue
+        else {left.push_back(items[i]);}// items[i] < pivotValue
     }
     vector<string> sortedLeft = quicksort2(left);
     vector<string> sortedRight = quicksort2(right);
@@ -121,8 +121,8 @@ int main(){
     populateVector(items, fileName); //printList(items);
             
     
-    quicksort(items, 0, items.size() - 1);
-    //quicksort2(items);
+    //quicksort(items, 0, items.size() - 1);
+    items = quicksort2(items);
 
     archiveSortedList(items, fileName);
     
