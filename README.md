@@ -1,6 +1,12 @@
-# List_Ranker
-Given a List of Items (Movies, flavors of ice cream, etc.), will use a recursive algorithm to sort the data and output a new .txt containing the items in a ranked order. The program prompts the user for each comparison.
-This Program takes in a .txt file as an input and outputs another .txt
-The output will be Ranked_*inputFile*.txt
-For testing purposes, entering "Random" as the input file will execute the program on a list of 30 ranom numbers 0-199.
-This seems to O(n*log(n)) but is still sub-optimal. Its spacial complexity is O(1) becuase it only creates one vector containing the whole list, does not create sub-vectors during recursive steps.
+Possible compile and execution solutions
+compile with $ g++ main.cpp rankedListGenerator.cpp merge.cpp
+execute with $ ./a.out
+
+This program will prompt the user if they want to sort an unsorted list or two merge two sorted lists.
+The lists used in this will be existing .txt files, when inputting file names it is important to include .txt at the end.
+The goal of this program is to allow users to apply the quicksort and merge algorithims to lists of items of subjective worth.
+An example of this would be, to sort a list of ice cream flavors based on your preference.
+To make the comparisons, the program will prompt the user with a series of queries. 
+The outputted sorted list or combined list will be a new .txt file,
+For sorting the new file name will be Ranked_(original file name).txt
+For merging the new file name will be Combined_(file 1 name)_(file 2 name).txt
